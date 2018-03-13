@@ -1,11 +1,10 @@
 <div [hidden]="enviado" class="container" class="text-center">
   <h2>cadastre-se</h2>
   <form #usuarioForm="ngForm" (ngSubmit)="usuarioForm.valid && enviar()">
-
     <div class="form-group col-6 form-cadastro">
-      <label for="nome">Nome</label>
-      <input type="text" class="form-control" id="nome" required minlength="3" maxlength="128" [(ngModel)]="model.nome" name="nome"
-        #nome="ngModel">
+      <label for="nome">nome</label>
+      <input type="text" class="form-control" id="nome" required minlength="3" maxlength="128" 
+      [(ngModel)]="model.nome" name="nome" #nome="ngModel">
       <div *ngIf="nome.invalid && (nome.dirty || nome.touched)" class="alert alert-danger">
         <div *ngIf="nome?.errors.required">
           O nome é obrigatório
@@ -17,40 +16,23 @@
           O nome deve ter no máximo 128 caracteres
         </div>
       </div>
+      <label for="email">email</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="model.email"
+        name="email" #email="ngModel">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+          <div *ngIf="email?.errors.required">
+            O Email é obrigatório
+          </div>
+        </div>
+      <label for="email">senha</label>
+      <input type="password" class="form-control" id="senha" required [(ngModel)]="model.senha"
+        name="senha" #senha="ngModel">
+        <div *ngIf="senha.invalid && (senha.dirty || senha.touched)" class="alert alert-danger">
+          <div *ngIf="senha?.errors.required">
+            A senha é obrigatória
+          </div>
+        </div>
     </div>
-
-    <div class="form-group col-6 form-cadastro">
-      <label for="nome">Nome</label>
-      <input type="text" class="form-control" id="nome" required minlength="3" maxlength="128" [(ngModel)]="model.nome" name="nome"
-        #nome="ngModel">
-      <div *ngIf="nome.invalid && (nome.dirty || nome.touched)" class="alert alert-danger">
-        <div *ngIf="nome?.errors.required">
-          O nome é obrigatório
-        </div>
-        <div *ngIf="nome?.errors.required">
-          O nome deve ter pelo menor 3 caracteres
-        </div>
-        <div *ngIf="nome?.errors.maxlength">
-          O nome deve ter no máximo 128 caracteres
-        </div>
-      </div>
-    </div>
-    <div class="form-group col-6 form-cadastro">
-      <label for="nome">Nome</label>
-      <input type="text" class="form-control" id="nome" required minlength="3" maxlength="128" [(ngModel)]="model.nome" name="nome"
-        #nome="ngModel">
-      <div *ngIf="nome.invalid && (nome.dirty || nome.touched)" class="alert alert-danger">
-        <div *ngIf="nome?.errors.required">
-          O nome é obrigatório
-        </div>
-        <div *ngIf="nome?.errors.required">
-          O nome deve ter pelo menor 3 caracteres
-        </div>
-        <div *ngIf="nome?.errors.maxlength">
-          O nome deve ter no máximo 128 caracteres
-        </div>
-      </div>
-    </div>
-
+    <button type="button" (click)="novoUsuario()" class="btn btn-danger">cadastrar</button>
   </form>
 </div>

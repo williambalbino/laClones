@@ -4,7 +4,8 @@ export class Usuario {
     constructor(
         public nome: string,
         public cpf: string,
-        public email: string
+        public email: string,
+        public senha: string
     ) {}
 
 }

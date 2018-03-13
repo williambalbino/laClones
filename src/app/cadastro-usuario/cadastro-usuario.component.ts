@@ -22,6 +22,6 @@ export class CadastroUsuarioComponent {
   }
 
   novoUsuario() {
-    this.model = new Usuario('', '', '');
+    this.model = new Usuario('', '', '', '');
   }
 }
